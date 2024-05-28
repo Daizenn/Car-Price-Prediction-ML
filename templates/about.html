@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tentang - Prediksi Harga Mobil Bekas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Prediksi Harga Mobil Bekas</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('predict') }}">Prediksi Harga</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">Tentang</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Kontak</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('car_list') }}">Daftar Mobil</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h2>Tentang Aplikasi Ini</h2>
+        <p>Aplikasi ini bertujuan untuk membantu Anda memprediksi harga mobil bekas berdasarkan berbagai fitur seperti brand, jenis mobil, dan lainnya.</p>
+    </div>
+</body>
+</html>

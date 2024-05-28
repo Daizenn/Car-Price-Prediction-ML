@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Mobil - Prediksi Harga Mobil Bekas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Daftar Mobil dengan Harga yang Diprediksi</h2>
+        <table>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Harga yang Diprediksi (IDR)</th>
+            </tr>
+            {% for car in car_data %}
+            <tr>
+                <td>{{ car.brand }}</td>
+                <td>{{ car.model }}</td>
+                <td>{{ car.predicted_price }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

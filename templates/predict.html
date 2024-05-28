@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediksi Harga - Prediksi Harga Mobil Bekas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Prediksi Harga Mobil Bekas</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('predict') }}">Prediksi Harga</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">Tentang</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Kontak</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('car_list') }}">Daftar Mobil</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h2>Prediksi Harga Mobil Bekas</h2>
+        <form action="{{ url_for('predict') }}" method="post" class="mt-4">
+            <div class="form-group">
+                <label for="warna">Warna:</label>
+                <select id="warna" name="warna" class="form-control">
+                    <option value="Lainnya">Lainnya</option>
+                    <option value="Hitam">Hitam</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Putih">Putih</option>
+                    <option value="Hijau">Hijau</option>
+                    <option value="Abu-abu">Abu-abu</option>
+                    <option value="Merah">Merah</option>
+                    <option value="Biru">Biru</option>
+                    <option value="Kuning">Kuning</option>
+                    <option value="Emas">Emas</option>
+                    <option value="Marun">Marun</option>
+                    <option value="Coklat">Coklat</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Ungu">Ungu</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bahan_bakar">Bahan Bakar:</label>
+                <select id="bahan_bakar" name="bahan_bakar" class="form-control">
+                    <option value="Electric">Electric</option>
+                    <option value="Pertamax">Pertamax</option>
+                    <option value="Solar">Solar</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dirakit">Dirakit:</label>
+                <select id="dirakit" name="dirakit" class="form-control">
+                    <option value="Complete Knock Down (CKD)">Complete Knock Down (CKD)</option>
+                    <option value="Complete Built Up (CBU)">Complete Built Up (CBU)</option>
+                    <option value="Semi Knock Down (SKD)">Semi Knock Down (SKD)</option>
+                    <option value="4 Speaker Stereo">4 Speaker Stereo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="transmisi">Transmisi:</label>
+                <select id="transmisi" name="transmisi" class="form-control">
+                    <option value="Automatic">Automatic</option>
+                    <option value="Manual">Manual</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="jenis_mobil">Jenis Mobil:</label>
+                <select id="jenis_mobil" name="jenis_mobil" class="form-control">
+                    <option value="Wagon">Wagon</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Fastback">Fastback</option>
+                    <option value="Coupe">Coupe</option>
+                    <option value="SUV">SUV</option>
+                    <option value="MPV">MPV</option>
+                    <option value="Convertible">Convertible</option>
+                    <option value="Van">Van</option>
+                    <option value="Pick-up">Pick-up</option>
+                    <option value="Cabriolet">Cabriolet</option>
+                    <option value="Targa">Targa</option>
+                    <option value="Double Cabin">Double Cabin</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Box">Box</option>
+                    <option value="Minibus">Minibus</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="brand">Brand:</label>
+                <select id="brand" name="brand" class="form-control">
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Wuling">Wuling</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="KIA">KIA</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Chery">Chery</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="MINI">MINI</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Land Rover">Land Rover</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Daihatsu">Daihatsu</option>
+                    <option value="Suzuki">Suzuki</option>
+                    <option value="Peugeot">Peugeot</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Proton">Proton</option>
+                    <option value="Geely">Geely</option>
+                    <option value="Isuzu">Isuzu</option>
+                    <option value="MG">MG</option>
+                    <option value="smart">smart</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Maserati">Maserati</option>
+                    <option value="Cadillac">Cadillac</option>
+                    <option value="Rolls-Royce">Rolls-Royce</option>
+                    <option value="Bentley">Bentley</option>
+                    <option value="Hummer">Hummer</option>
+                    <option value="Renault">Renault</option>
+                    <option value="DFSK">DFSK</option>
+                    <option value="Subaru">Subaru</option>
+                    <option value="Aston Martin">Aston Martin</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Prediksi</button>
+        </form>
+        {% if prediction %}
+            <div class="alert alert-success mt-4">
+                <h4>Hasil Prediksi: {{ prediction }} IDR</h4>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

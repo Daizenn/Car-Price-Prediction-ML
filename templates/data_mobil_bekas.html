@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mobil Bekas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Data Mobil Bekas</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama Mobil</th>
+                <th>Harga</th>
+                <th>Tahun Kendaraan</th>
+                <th>Kilometer</th>
+                <th>Warna</th>
+                <th>Transmisi</th>
+                <th>Mesin (CC)</th>
+                <th>Bahan Bakar</th>
+                <th>Daerah</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if cars %}
+                {% for car in cars %}
+                <tr>
+                    <td>{{ car.nama_mobil }}</td>
+                    <td>{{ car.harga }}</td>
+                    <td>{{ car.tahun_kendaraan }}</td>
+                    <td>{{ car.kilometer }}</td>
+                    <td>{{ car.warna }}</td>
+                    <td>{{ car.transmisi }}</td>
+                    <td>{{ car.mesin_enginecc }}</td>
+                    <td>{{ car.bahan_bakar }}</td>
+                    <td>{{ car.daerah }}</td>
+                    <td><a href="{{ car.link }}" target="_blank">Lihat Detail</a></td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="10">Tidak ada data mobil bekas yang ditemukan.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</body>
+</html>
