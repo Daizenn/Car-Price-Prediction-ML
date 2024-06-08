@@ -2,25 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Daftar Mobil - Prediksi Harga Mobil Bekas</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h2>Daftar Mobil dengan Harga yang Diprediksi</h2>
+        <h2>Car List</h2>
         <table>
-            <tr>
-                <th>Brand</th>
-                <th>Model</th>
-                <th>Harga yang Diprediksi (IDR)</th>
-            </tr>
-            {% for car in car_data %}
-            <tr>
-                <td>{{ car.brand }}</td>
-                <td>{{ car.model }}</td>
-                <td>{{ car.predicted_price }}</td>
-            </tr>
-            {% endfor %}
+            <thead>
+                <tr>
+                    <th>Brand</th>
+                    <th>Jenis Mobil</th>
+                    <th>Tahun Kendaraan</th>
+                    <th>Warna</th>
+                    <th>Transmisi</th>
+                    <th>Kilometer</th>
+                    <th>Mesin (CC)</th>
+                    <th>Bahan Bakar</th>
+                    <th>Dirakit</th>
+                    <th>Penumpang</th>
+                    <th>Pintu</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for car in cars %}
+                <tr>
+                    <td>{{ car.brand }}</td>
+                    <td>{{ car.jenis_mobil }}</td>
+                    <td>{{ car.tahun_kendaraan }}</td>
+                    <td>{{ car.warna }}</td>
+                    <td>{{ car.transmisi }}</td>
+                    <td>{{ car.kilometer }}</td>
+                    <td>{{ car.mesin_enginecc }}</td>
+                    <td>{{ car.bahan_bakar }}</td>
+                    <td>{{ car.dirakit }}</td>
+                    <td>{{ car.penumpang }}</td>
+                    <td>{{ car.pintu }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </table>
     </div>
 </body>
